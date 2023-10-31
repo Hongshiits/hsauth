@@ -329,7 +329,7 @@ def auth_reset(request:HttpRequest):
                 raise Exception('otp invailed')
             uuid=digested_token['uuid']
             db_cursor=db_obj.cursor()
-            db_cursor.execute(chg_update_everything_email_sql,('users','password',req['password'],req['uuid']))
+            db_cursor.execute(chg_update_everything_email_sql%('users','password',req['password'],digested_token['uuid']))
             db_obj.commit()
             db_cursor.close()
             res['data']['status']='ok'

@@ -64,7 +64,7 @@ def get_info(request:HttpRequest):
             db_cursor.execute(login_select_uuid_sql,(req['uuid']))
             db_data=db_cursor.fetchone() # type: ignore
             res['data']['username']=db_data[3]# type: ignore
-            db_cursor.execute(chg_select_everything_sql,('basic_info',req['uuid']))
+            db_cursor.execute(chg_select_everything_sql%('basic_info',req['uuid']))
             db_data=db_cursor.fetchone() # type: ignore
             if db_data is not None:   #2 region 3 nickname 5 bio
                 res['data']['region']=db_data[2]# type: ignore
@@ -73,6 +73,7 @@ def get_info(request:HttpRequest):
                 pass
 
             db_cursor.close()
+            res['data']['status'] ='ok'
         except Exception as e:
             traceback.print_exc()
             res['data']['status'] ='error'
