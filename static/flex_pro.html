@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <script src="./pro_flex.js"></script>
+    </head>
+
+    <body>
+        <p>tips:select only needs token and column,update and insert need all these things</p>
+        <br>
+        <input type="text" id="token">token</input>
+        <input type="text" id="table">table</input>
+        <input type="text" id="column">column</input>
+        <input type="text" id="value">value</input>
+        <button onclick="flex_pro('/api/public/select_info/')">flex_select</button>
+        <button onclick="flex_pro('/api/public/update_info/')">flex_update</button>
+        <button onclick="flex_pro('/api/public/insert_info/')">flex_insert</button>
+        <p id="result"></p>
+    </body>
+</html>

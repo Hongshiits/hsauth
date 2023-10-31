@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <script src="./crypto.js"></script>
+        <script src="./auth_pro_register.js"></script>
+        <script>
+        
+window.addEventListener("load", (event) => {
+    var url_parse_t=new URL(window.location.href);
+    document.getElementById('otp').innerHTML=url_parse_t.searchParams.get('otp')+" "+url_parse_t.searchParams.get('email');
+});
+        </script>
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/uikit@3.17.6/dist/css/uikit.min.css" />
+
+        <!-- UIkit JS -->
+        <script src="https://cdn.jsdelivr.net/npm/uikit@3.17.6/dist/js/uikit.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/uikit@3.17.6/dist/js/uikit-icons.min.js"></script>
+    </head>
+
+    <body>
+        <div class=" uk-background-secondary uk-background-fixed uk-background-center-center uk-height-medium uk-width-large" style="background-image: url(https://embed.pixiv.net/artwork.php?illust_id=112869477);">
+            <input type="text" id="nickname">username</input>
+            <input type="password" id="password">password</input>
+            <button class="uk-button uk-button-default" id="commmit_reg" onclick="commit_register()">commit_reg</button>
+            <p id="otp"></p>
+            <p id="result"></p>
+        </div>
+    </body>
+</html>
