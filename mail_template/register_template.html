@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <!-- https://developer.mozilla.org/en-US/docs/Web/HTTP/CSP -->
+    <meta
+      http-equiv="Content-Security-Policy"
+      content="default-src 'self'; script-src 'self'"
+    />
+    <meta
+      http-equiv="X-Content-Security-Policy"
+      content="default-src 'self'; script-src 'self'"
+    />
+    <title>Hongshiite OTP</title>
+  </head>
+  <body>
+    <p>您的邮箱验证码是</p>
+    <a href='http://%s/static/register.html?otp=%s&email=%s'>注册</a>
+    <p>该验证码用于注册Hongshiite账户，十分钟内有效，请勿随意给其他人</p>
+  </body>
+</html>

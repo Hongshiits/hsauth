@@ -1,0 +1,1 @@
+"c:\Program Files\Python38\python.exe" -m hypercorn -b 0.0.0.0:90 -w 4 hsauth.asgi:application
